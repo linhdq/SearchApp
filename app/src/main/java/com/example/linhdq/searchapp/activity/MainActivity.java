@@ -339,13 +339,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showFileChooser() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        //for samsung
-//        Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
-//        intent.putExtra("CONTENT_TYPE", "*/*");
-//        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        Intent intent;
+        String strManufacturer = android.os.Build.MANUFACTURER;
+        if(!strManufacturer.equalsIgnoreCase("samsung")) {
+            intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("*/*");
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+        }else {
+            intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
+            intent.putExtra("CONTENT_TYPE", "*/*");
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+        }
         try {
             startActivityForResult(
                     Intent.createChooser(intent, "Select a File"),
