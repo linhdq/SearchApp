@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="Setting"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/teal_500"
+        android:id="@+id/txt_title"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Your subject:"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/teal_500"
+        android:textStyle="bold"
+        android:id="@+id/txt_subject"
+        android:layout_below="@id/txt_title"
+        android:layout_marginTop="10dp"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_toRightOf="@id/txt_subject"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/spinner_subject"
+        android:layout_below="@id/txt_title"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0 question"
+        android:textColor="@color/teal_300"
+        android:textStyle="italic"
+        android:id="@+id/txt_number_ques"
+        android:layout_below="@id/txt_subject"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/txt_number_ques"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:background="@drawable/custom_button_orange"
+            android:text="Get more"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@color/white"
+            android:id="@+id/btn_get_more"
+            android:layout_marginRight="20dp"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:background="@drawable/custom_button_teal"
+            android:text="ok"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@color/white"
+            android:id="@+id/btn_ok"
+            />
+    </LinearLayout>
+</RelativeLayout>
